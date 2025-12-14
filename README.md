@@ -1,8 +1,8 @@
 # Showcase Data Analysis Projects
 
-> A curated collection of 5 best-in-class Python data analysis projects demonstrating exceptional technical excellence and business impact
+> A curated collection of 5 best-in-class Python data analysis projects from the Mathematical Modeling Society at Beijing Royal School
 
-This repository features the **top 5 showcase projects** selected from a comprehensive portfolio of 30+ data analysis projects. These projects represent the highest quality work, showcasing advanced machine learning techniques, innovative problem-solving approaches, and significant business value across multiple domains.
+This repository features the **top 5 showcase projects** selected from a comprehensive portfolio of 30+ data analysis projects completed by the **Mathematical Modeling Society** at Beijing Royal School. As the society president, I curated these projects to represent the highest quality work from both individual and collaborative efforts, showcasing advanced machine learning techniques, innovative problem-solving approaches, and significant business value across multiple domains.
 
 ## 🌟 Featured Projects
 
@@ -207,8 +207,10 @@ These showcase projects are ideal for:
 
 ## 👤 Author
 
-**Showcase Projects**  
-*Best-in-class data analysis projects demonstrating exceptional technical excellence, innovation, and business impact*
+**Mathematical Modeling Society - Showcase Projects**  
+*Beijing Royal School*
+
+As the **President of the Mathematical Modeling Society** at Beijing Royal School, I selected these 5 best-in-class projects from our comprehensive portfolio of 30+ data analysis projects. These showcase projects represent the highest quality work from both individual and group efforts, demonstrating exceptional technical excellence, innovation, and business impact.
 
 ## 📄 License
 
@@ -220,5 +222,5 @@ For questions or collaboration opportunities, please refer to individual project
 
 ---
 
-**Note**: These showcase projects represent the pinnacle of data science work, demonstrating not just technical competence, but innovation, business acumen, and the ability to deliver significant value through data analysis. Each project showcases exceptional problem-solving skills and deep understanding of both technical and business aspects of data science.
+**Note**: These showcase projects represent the pinnacle of data science work from the Mathematical Modeling Society, demonstrating not just technical competence, but innovation, business acumen, and the ability to deliver significant value through data analysis. Each project showcases exceptional problem-solving skills and deep understanding of both technical and business aspects of data science. As the society president, these projects exemplify the excellence we strive for in our mathematical modeling and data analysis work.
 
