@@ -1,0 +1,32 @@
+PROJECT: Tmall Coupon Usage Prediction
+================================================================================
+
+PROJECT OVERVIEW:
+This project applies machine learning to solve a critical e-commerce business problem: 
+predicting which customer segments are most likely to use coupons. The project demonstrates strong business 
+orientation and practical application of data science.
+
+Key Highlights:
+- Business-focused analysis of coupon usage patterns
+- Comprehensive data profiling and cleaning
+- Single and multi-variable analysis
+- Correlation analysis to identify key factors
+- Logistic Regression model development with:
+  * Training/test set splitting
+  * Model evaluation using accuracy and ROC/AUC metrics
+  * Model optimization techniques
+- Actionable business recommendations for targeting high-value users
+
+This project showcases the ability to apply data science to real business problems, 
+demonstrating both technical competence and business understanding.
+
+TECHNICAL STACK:
+pandas, numpy, matplotlib, scikit-learn, Logistic Regression
+
+KEY SKILLS:
+Business Analytics, Predictive Modeling, E-commerce Analytics, Model Optimization
+
+PROJECT TYPE: Group Project
+
+This project demonstrates advanced data analysis capabilities, combining technical 
+expertise with business understanding to deliver actionable insights.
