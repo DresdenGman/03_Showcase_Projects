@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>航空公司客户价值分析</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Airlinecustomeranalysis</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14598,7 +14598,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#项目介绍" data-toc-modified-id="项目介绍-1">项目介绍</a></span><ul class="toc-item"><li><span><a href="#关键词" data-toc-modified-id="关键词-1.1">关键词</a></span></li><li><span><a href="#1.对数据进行基本的探索" data-toc-modified-id="1.对数据进行基本的探索-1.2">1.对数据进行基本的探索</a></span><ul class="toc-item"><li><span><a href="#数据抽取" data-toc-modified-id="数据抽取-1.2.1">数据抽取</a></span></li><li><span><a href="#数据分析" data-toc-modified-id="数据分析-1.2.2">数据分析</a></span></li></ul></li><li><span><a href="#2.数据清洗" data-toc-modified-id="2.数据清洗-1.3">2.数据清洗</a></span><ul class="toc-item"><li><span><a href="#属性规约" data-toc-modified-id="属性规约-1.3.1">属性规约</a></span></li></ul></li><li><span><a href="#3.数据变换" data-toc-modified-id="3.数据变换-1.4">3.数据变换</a></span></li><li><span><a href="#4、聚类分析" data-toc-modified-id="4、聚类分析-1.5">4、聚类分析</a></span><ul class="toc-item"><li><span><a href="#模型构建" data-toc-modified-id="模型构建-1.5.1">模型构建</a></span></li><li><span><a href="#客户聚类" data-toc-modified-id="客户聚类-1.5.2">客户聚类</a></span></li></ul></li><li><span><a href="#5、客户价值分析" data-toc-modified-id="5、客户价值分析-1.6">5、客户价值分析</a></span></li></ul></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Project Introduction" data-toc-modified-id="Project Introduction-1">Project Introduction</a></span><ul class="toc-item"><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.1">Keywords</a></span></li><li><span><a href="#1.data" data-toc-modified-id="1.data-1.2">1.data</a></span><ul class="toc-item"><li><span><a href="#data" data-toc-modified-id="data-1.2.1">data</a></span></li><li><span><a href="#Data Analysis" data-toc-modified-id="Data Analysis-1.2.2">Data Analysis</a></span></li></ul></li><li><span><a href="#2.Data Cleaning" data-toc-modified-id="2.Data Cleaning-1.3">2.Data Cleaning</a></span><ul class="toc-item"><li><span><a href="#attribute" data-toc-modified-id="attribute-1.3.1">attribute</a></span></li></ul></li><li><span><a href="#3.Data Transformation" data-toc-modified-id="3.Data Transformation-1.4">3.Data Transformation</a></span></li><li><span><a href="#4、Cluster Analysis" data-toc-modified-id="4、Cluster Analysis-1.5">4、Cluster Analysis</a></span><ul class="toc-item"><li><span><a href="#Model Building" data-toc-modified-id="Model Building-1.5.1">Model Building</a></span></li><li><span><a href="#customerclustering" data-toc-modified-id="customerclustering-1.5.2">customerclustering</a></span></li></ul></li><li><span><a href="#5、customeranalysis" data-toc-modified-id="5、customeranalysis-1.6">5、customeranalysis</a></span></li></ul></li></ul></div>
 
 </div>
 </div>
@@ -14610,25 +14610,25 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">&#39033;&#30446;&#20171;&#32461;<a class="anchor-link" href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">&#182;</a></h2><p>信息时代的到来使得企业的营销焦点从产品中心转为了客户中心，为实现企业利润最大化目标。准确的对客户进行分类，根据分类结果制定个性化服务方
-案，优化企业营销资源分配方案。在航空营销行业中，各个航空公司通过推出更优惠的营销方式来吸引更多的客户，而通过建立合理的客户价值评估模型，对客户进行分群，分析比较不同群体的客户价值，并制定相应的营销策略，对不同的客户群提供个性化的客户服务是必须和有效的。 
-本实验基于此来对收集到的某航空公司2012年至2014年的会员档案信息和其乘坐航班记录进行分析，我们将根据这些数据实现以下目标：</p>
-<p>1.借助航空公司客户数据，对客户进行分类。</p>
-<p>2.对不同的客户类别进行特征分析，比较不同类客户的客户价值。</p>
-<p>3.对不同价值的客户类别提供个性化服务，制定相应的营销策略。</p>
-<p>本实验的目标是客户价值识别，即对客户进行分类。识别客户价值最广泛的模型是通过RFM指标来对客户进行细分，识别出高价值的客户： 
-Recency 最近消费时间间隔 
-Frequency 消费频率 
-Monetary 消费金额 
-在RFM模型中，消费金额表示在一段时间内，客户购买该企业产品金额的总和。但在本实验中，基于航空机票价格的多变性，同样消费金额的不同旅客对航空公司的价值是不同的。例如，一位购买长航线、低等级舱位票的旅客与一位购买短航线、高等级舱位票的旅客相比，自然是后者对于航空公司而言价值更高。 
-因此，在本实验中，我们将消费金额指标使用“客户在一定时间内累积的飞行里程M”和“客户在一定时间内乘坐舱位所对应的折扣系数的平均值C”来代替。由于航空公司会员入会时间的长短在一定程度上能够影响客户价值，我们在模型中增加客户关系长度L这一个指标。 
-本实验将客户关系长度L、消费时间间隔R、消费频率F、飞行里程M和折扣系数的平均值C五个指标作为航空公司识别客户价值指标，记为LRFMC模型。 
-针对LRFMC模型，如果采用传统的属性分箱方法，即依据各个属性的平均值进行划分，对其分类，得到的分类客户群过多，提高了针对性营销的成本。并未达到利益最大化目标。因此，选取聚类算法来识别客户价值。通过对航空公司客户价值的LRFMC模型的五个指标进行K-Means聚类，识别出最有价值客户。</p>
-<p>本案例数据分析总体流程：</p>
-<p>1）从数据中选择性抽取与新增数据抽取分别形成历史数据和增量数据。</p>
-<p>2）对1）中抽取的数据进行数据探索分析与预处理。包括数据清洗、属性规约和变换等。</p>
-<p>3）利用2）中形成的处理后的建模数据，基于LRFMC模型进行客户分群，对每个客户群进行特征分析，识别出有价值的客户。</p>
-<p>4）针对模型结果得到不同价值的客户，采用不同的营销手段，提供定制化服务。</p>
+<h2 id="%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">Project Introduction<a class="anchor-link" href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">¶</a></h2><p>infohourcustomer，。customerclassification，based on classificationresult
+，minute。，Airlinethrough customer，through customerevaluationmodel，customerminute，analysiscomparedifferent customer，，different Customer Groupcustomer and 。 
+based on Airline2012year2014yearMemberinfo and recordanalysis，based on data：</p>
+<p>1.Airlinecustomerdata，customerclassification。</p>
+<p>2.different customerfeatureanalysis，comparedifferent customercustomer。</p>
+<p>3.different customer，。</p>
+<p>customer，customerclassification。customermodelthrough RFMcustomerminute，customer： 
+Recency time 
+Frequency  
+Monetary Monetary Value 
+RFMmodel，Monetary Valueindicatestime，customerAmount and 。，based on Price，Monetary Valuedifferent Airlinedifferent 。 e.g., ，、、，Airline。 
+ therefore ，，Monetary Valueusing “customertimeFlight MileageM” and “customertimemeanC”。AirlineMembertimecustomer，modelcustomerL。 
+customerL、timeR、F、Flight MileageM and meanCAirlinecustomer，LRFMCmodel。 
+LRFMCmodel，using attributeminute，attributemeanminute，classification，classificationCustomer Group，。。 therefore ，clusteringalgorithmcustomer。through AirlinecustomerLRFMCmodelK-Meansclustering，Value Customers。</p>
+<p>Data Analysis：</p>
+<p>1）datadatarespectivelydata and data。</p>
+<p>2）1）dataData Explorationanalysisprocessing。including Data Cleaning、attribute and 。</p>
+<p>3）utilizing 2）processingModelingdata，based on LRFMCmodelcustomerminute，Customer Groupfeatureanalysis，customer。</p>
+<p>4）modelresultdifferent customer，using different ，。</p>
 
 </div>
 </div>
@@ -14640,8 +14640,8 @@ Monetary 消费金额
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="%E5%85%B3%E9%94%AE%E8%AF%8D">&#20851;&#38190;&#35789;<a class="anchor-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D">&#182;</a></h3><ul>
-<li>pandas数据处理、K-means聚类、LRFCM模型</li>
+<h3 id="%E5%85%B3%E9%94%AE%E8%AF%8D">Keywords<a class="anchor-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D">¶</a></h3><ul>
+<li>pandasdataprocessing、K-meansclustering、LRFCMmodel</li>
 </ul>
 
 </div>
@@ -14654,12 +14654,12 @@ Monetary 消费金额
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%8E%A2%E7%B4%A2">1.&#23545;&#25968;&#25454;&#36827;&#34892;&#22522;&#26412;&#30340;&#25506;&#32034;<a class="anchor-link" href="#1.%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%8E%A2%E7%B4%A2">&#182;</a></h3><h4 id="%E6%95%B0%E6%8D%AE%E6%8A%BD%E5%8F%96">&#25968;&#25454;&#25277;&#21462;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE%E6%8A%BD%E5%8F%96">&#182;</a></h4><p>对于航空公司抽取的以2014-03-31为结束时间的数据中，抽取所含客户基本信息、乘机信息以及积分信息等详细数据，总含有62 988条记录。 
-我们将数据的总共数据间隔视为分析观测窗口，在窗口的所有数据即源数据。其中包含了会员卡号、入会时间、性别、年龄、会员卡级别、工作地城市、工作地所在省份、工作地所在国家、观测窗口结束时间、观测窗口乘机积分、飞行公里数、飞行次数、飞行时间、成绩时间间隔和平均折扣率等44个属性。</p>
-<h4 id="%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">&#25968;&#25454;&#20998;&#26512;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">&#182;</a></h4><p>对于原始数据，我们总要进行探索分析，即对数据进行缺失值分析和异常分析，分析出数据的规律以及异常值。 
-在我们的数据中，通过观察发现部分票价属性为空，或者有票价最小值为0、折扣率最小值为0、总飞行公里数却大于0的记录。票价为空值的数据可能是客户不存在乘机记录造成的，而其他的数据是客户乘坐0折机票或者积分兑换产生的。 
-如何处理这些数据，取决于其在总数据中占的比重有多大。 
-首先来查找每列属性观测值中空值个数、最大值、最小值等。</p>
+<h3 id="1.%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%8E%A2%E7%B4%A2">1.data<a class="anchor-link" href="#1.%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%8E%A2%E7%B4%A2">¶</a></h3><h4 id="%E6%95%B0%E6%8D%AE%E6%8A%BD%E5%8F%96">data<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE%E6%8A%BD%E5%8F%96">¶</a></h4><p>Airline2014-03-31timedata，customerinfo、infoand minuteinfodata，62 988record。 
+datadataanalysis，datadata。containsMember、time、、year、Member、、、、time、minute、、Flight Count、time、time and Discount Rate44attribute。</p>
+<h4 id="%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">Data Analysis<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">¶</a></h4><p>data，analysis，datamissing valuesanalysis and analysis，analysisdataand 。 
+data，through minuteattribute，min0、Discount Ratemin0、0record。nulldatacustomerhas record，datacustomer0minute。 
+processingdata，data。 
+attributenull、max、min。</p>
 
 </div>
 </div>
@@ -14669,24 +14669,24 @@ Monetary 消费金额
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">datafile</span><span class="o">=</span> <span class="s1">&#39;./data/air_data.csv&#39;</span> <span class="c1">#航空原始数据,第一行为属性标签</span>
-<span class="n">resultfile</span> <span class="o">=</span> <span class="s1">&#39;./tmp/explore.xlsx&#39;</span> <span class="c1">#数据探索结果表</span>
+<span class="n">datafile</span><span class="o">=</span> <span class="s1">'./data/air_data.csv'</span> <span class="c1">#data,attributelabel</span>
+<span class="n">resultfile</span> <span class="o">=</span> <span class="s1">'./tmp/explore.xlsx'</span> <span class="c1">#Data Explorationresult</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="c1">#读取原始数据，指定UTF-8编码（需要用文本编辑器将数据装换为UTF-8编码）</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">'utf-8'</span><span class="p">)</span> <span class="c1">#data，UTF-8encoding（need to dataUTF-8encoding）</span>
 
-<span class="n">explore</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">percentiles</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">include</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="c1">#包括对数据的基本描述，percentiles参数是指定计算多少的分位数表（如1/4分位数、中位数等）；T是转置，转置后更方便查阅</span>
-<span class="n">explore</span><span class="p">[</span><span class="s1">&#39;null&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="n">explore</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="c1">#describe()函数自动计算非空值数，需要手动计算空值数</span>
-<span class="n">explore</span> <span class="o">=</span> <span class="n">explore</span><span class="p">[[</span><span class="s1">&#39;null&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">]]</span>
-<span class="n">explore</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;空值数&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;最大值&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;最小值&#39;</span><span class="p">]</span> <span class="c1">#表头重命名</span>
+<span class="n">explore</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">percentiles</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">include</span> <span class="o">=</span> <span class="s1">'all'</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="c1">#including data，percentilesparametercalculateminute（1/4minute、）；T，</span>
+<span class="n">explore</span><span class="p">[</span><span class="s1">'null'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="n">explore</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span> <span class="c1">#describe()calculatenull，need to calculatenull</span>
+<span class="n">explore</span> <span class="o">=</span> <span class="n">explore</span><span class="p">[[</span><span class="s1">'null'</span><span class="p">,</span> <span class="s1">'max'</span><span class="p">,</span> <span class="s1">'min'</span><span class="p">]]</span>
+<span class="n">explore</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sa">u</span><span class="s1">'null'</span><span class="p">,</span> <span class="sa">u</span><span class="s1">'max'</span><span class="p">,</span> <span class="sa">u</span><span class="s1">'min'</span><span class="p">]</span> <span class="c1">#</span>
 
-<span class="sd">&#39;&#39;&#39;这里只选取部分探索结果。</span>
-<span class="sd">describe()函数自动计算的字段有count（非空值数）、unique（唯一值数）、top（频数最高者）、freq（最高频数）、mean（平均值）、std（方差）、min（最小值）、50%（中位数）、max（最大值）&#39;&#39;&#39;</span>
-<span class="n">explore</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">resultfile</span><span class="p">)</span> <span class="c1">#导出结果</span>
+<span class="sd">'''minuteresult。</span>
+<span class="sd">describe()calculatecount（null）、unique（）、top（）、freq（）、mean（mean）、std（）、min（min）、50%（）、max（max）'''</span>
+<span class="n">explore</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">resultfile</span><span class="p">)</span> <span class="c1">#result</span>
 </pre></div>
 
      </div>
@@ -14699,7 +14699,7 @@ Monetary 消费金额
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">explore</span>
@@ -14741,9 +14741,9 @@ Monetary 消费金额
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>空值数</th>
-      <th>最大值</th>
-      <th>最小值</th>
+      <th>null</th>
+      <th>max</th>
+      <th>min</th>
     </tr>
   </thead>
   <tbody>
@@ -15029,13 +15029,13 @@ Monetary 消费金额
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="2.%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97">2.&#25968;&#25454;&#28165;&#27927;<a class="anchor-link" href="#2.%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97">&#182;</a></h3><p>本案例主要采用数据清洗、属性规约与数据变换的预处理方法。 
-由于基于LRMFC模型来对客户进行分群，我们需要将这44个属性进行筛选变换规则，来组成我们需要的指标列表。 
-而对于数据中的空值，我们则需要对其进行数据清洗。</p>
-<p>通过上一小节中的数据探索分析，发现数据中确实存在缺失值，且票价最小值为0、折扣率最小值为0、总飞行公里数却大于0的记录。但通过观察发现，这部分数据所占比例较小，对于问题影响不大，因此对其进行丢弃处理。具体的处理方法如下： 
-1.丢弃票价为空的记录 
-2.丢弃票价最小值为0、折扣率最小值为0、总飞行公里数却大于0的记录 
-使用pandas对满足清洗条件的数据进行丢弃，即该行数据全部丢弃。</p>
+<h3 id="2.%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97">2.Data Cleaning<a class="anchor-link" href="#2.%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97">¶</a></h3><p>main using Data Cleaning、attributeData Transformationprocessing。 
+based on LRMFCmodelcustomerminute，need to 44attribute，need to 。 
+datanull，need to Data Cleaning。</p>
+<p>through Data Explorationanalysis，datahas missing values，min0、Discount Ratemin0、0record。through ，minutedataShare，， therefore processing。specific processing： 
+1.record 
+2.min0、Discount Ratemin0、0record 
+using pandasdata，data。</p>
 
 </div>
 </div>
@@ -15045,26 +15045,26 @@ Monetary 消费金额
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#数据清洗，过滤掉不符合规则的数据</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Data Cleaning，data</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">datafile</span><span class="o">=</span> <span class="s1">&#39;./data/air_data.csv&#39;</span> <span class="c1">#航空原始数据,第一行为属性标签</span>
-<span class="n">cleanedfile</span> <span class="o">=</span> <span class="s1">&#39;./tmp/data_cleaned.csv&#39;</span> <span class="c1">#数据清洗后保存的文件</span>
+<span class="n">datafile</span><span class="o">=</span> <span class="s1">'./data/air_data.csv'</span> <span class="c1">#data,attributelabel</span>
+<span class="n">cleanedfile</span> <span class="o">=</span> <span class="s1">'./tmp/data_cleaned.csv'</span> <span class="c1">#Data Cleaningsavefile</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="c1">#读取原始数据，指定UTF-8编码（需要用文本编辑器将数据装换为UTF-8编码）</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="c1">#data，UTF-8encoding（need to dataUTF-8encoding）</span>
 
-<span class="c1">#票价非空值才保留</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;SUM_YR_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">&amp;</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;SUM_YR_2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
+<span class="c1">#null</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'SUM_YR_1'</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">&</span><span class="n">data</span><span class="p">[</span><span class="s1">'SUM_YR_2'</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
 
-<span class="c1">#只保留票价非零的，或者平均折扣率与总飞行公里数同时为0的记录。</span>
-<span class="n">index1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;SUM_YR_1&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span>
-<span class="n">index2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;SUM_YR_2&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span>
-<span class="n">index3</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;SEG_KM_SUM&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;avg_discount&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#该规则是“与”</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">index1</span> <span class="o">|</span> <span class="n">index2</span> <span class="o">|</span> <span class="n">index3</span><span class="p">]</span> <span class="c1">#该规则是“或”</span>
+<span class="c1">#，Discount Ratehour0record。</span>
+<span class="n">index1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'SUM_YR_1'</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span>
+<span class="n">index2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'SUM_YR_2'</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span>
+<span class="n">index3</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'SEG_KM_SUM'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'avg_discount'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#“”</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">index1</span> <span class="o">|</span> <span class="n">index2</span> <span class="o">|</span> <span class="n">index3</span><span class="p">]</span> <span class="c1">#“”</span>
 <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -15133,10 +15133,10 @@ Monetary 消费金额
       <td>54993</td>
       <td>2006/11/02</td>
       <td>2008/12/24</td>
-      <td>男</td>
+      <td></td>
       <td>6</td>
       <td>.</td>
-      <td>北京</td>
+      <td></td>
       <td>CN</td>
       <td>31.0</td>
       <td>2014/03/31</td>
@@ -15157,10 +15157,10 @@ Monetary 消费金额
       <td>28065</td>
       <td>2007/02/19</td>
       <td>2007/08/03</td>
-      <td>男</td>
+      <td></td>
       <td>6</td>
       <td>NaN</td>
-      <td>北京</td>
+      <td></td>
       <td>CN</td>
       <td>42.0</td>
       <td>2014/03/31</td>
@@ -15181,10 +15181,10 @@ Monetary 消费金额
       <td>55106</td>
       <td>2007/02/01</td>
       <td>2007/08/30</td>
-      <td>男</td>
+      <td></td>
       <td>6</td>
       <td>.</td>
-      <td>北京</td>
+      <td></td>
       <td>CN</td>
       <td>40.0</td>
       <td>2014/03/31</td>
@@ -15205,7 +15205,7 @@ Monetary 消费金额
       <td>21189</td>
       <td>2008/08/22</td>
       <td>2008/08/23</td>
-      <td>男</td>
+      <td></td>
       <td>5</td>
       <td>Los Angeles</td>
       <td>CA</td>
@@ -15229,10 +15229,10 @@ Monetary 消费金额
       <td>39546</td>
       <td>2009/04/10</td>
       <td>2009/04/15</td>
-      <td>男</td>
+      <td></td>
       <td>6</td>
-      <td>贵阳</td>
-      <td>贵州</td>
+      <td></td>
+      <td></td>
       <td>CN</td>
       <td>48.0</td>
       <td>2014/03/31</td>
@@ -15265,10 +15265,10 @@ Monetary 消费金额
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">cleanedfile</span><span class="p">)</span> <span class="c1">#导出结果,由于excel读取csv文件使用ansi编码</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">cleanedfile</span><span class="p">)</span> <span class="c1">#result,excelcsvfileusing ansiencoding</span>
 </pre></div>
 
      </div>
@@ -15283,7 +15283,7 @@ Monetary 消费金额
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="%E5%B1%9E%E6%80%A7%E8%A7%84%E7%BA%A6">&#23646;&#24615;&#35268;&#32422;<a class="anchor-link" href="#%E5%B1%9E%E6%80%A7%E8%A7%84%E7%BA%A6">&#182;</a></h4><p>原始数据中属性太多，根据航空公司客户价值LRFMC模型，只需选择与LRMFC指标相关的6个属性：FFP_DATE、LOAD_TIME、FLIGHT_COUNT、AVG_DISCOUNT、SEG_KM_SUM、LAST_TO_END。即入会时间、观测窗口结束时间、观测窗口的飞行次数、平均折扣率、观测窗口的总飞行公里数、最后一次乘机时间至观测窗口末端时长。删除与其不相干、弱相关或冗余的属性。经过属性选择后的数据集。</p>
+<h4 id="%E5%B1%9E%E6%80%A7%E8%A7%84%E7%BA%A6">attribute<a class="anchor-link" href="#%E5%B1%9E%E6%80%A7%E8%A7%84%E7%BA%A6">¶</a></h4><p>dataattribute，based on AirlinecustomerLRFMCmodel，LRMFCrelated 6attribute：FFP_DATE、LOAD_TIME、FLIGHT_COUNT、AVG_DISCOUNT、SEG_KM_SUM、LAST_TO_END。time、time、Flight Count、Discount Rate、、timehour。、related attribute。attributedataset。</p>
 
 </div>
 </div>
@@ -15293,11 +15293,11 @@ Monetary 消费金额
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">outfile</span> <span class="o">=</span> <span class="s1">&#39;./tmp/data_stipu.csv&#39;</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;FFP_DATE&#39;</span><span class="p">,</span><span class="s1">&#39;LOAD_TIME&#39;</span><span class="p">,</span><span class="s1">&#39;avg_discount&#39;</span><span class="p">,</span><span class="s1">&#39;FLIGHT_COUNT&#39;</span><span class="p">,</span><span class="s1">&#39;SEG_KM_SUM&#39;</span><span class="p">,</span><span class="s1">&#39;LAST_TO_END&#39;</span><span class="p">]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">outfile</span> <span class="o">=</span> <span class="s1">'./tmp/data_stipu.csv'</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">'FFP_DATE'</span><span class="p">,</span><span class="s1">'LOAD_TIME'</span><span class="p">,</span><span class="s1">'avg_discount'</span><span class="p">,</span><span class="s1">'FLIGHT_COUNT'</span><span class="p">,</span><span class="s1">'SEG_KM_SUM'</span><span class="p">,</span><span class="s1">'LAST_TO_END'</span><span class="p">]]</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -15407,7 +15407,7 @@ Monetary 消费金额
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
@@ -15425,20 +15425,20 @@ Monetary 消费金额
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="3.%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2">3.&#25968;&#25454;&#21464;&#25442;<a class="anchor-link" href="#3.%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2">&#182;</a></h3><p>数据变换是将数据转换成适当的格式。本实验数据依据LRFMC五个指标，对原始数据进行提取。 
-具体计算方式如下：</p>
+<h3 id="3.%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2">3.Data Transformation<a class="anchor-link" href="#3.%E6%95%B0%E6%8D%AE%E5%8F%98%E6%8D%A2">¶</a></h3><p>Data Transformationdata。dataLRFMC，dataextract。 
+specific calculate：</p>
 <p>（1） L = LOAD_TIME - FFP_DATE 
-会员入会时间距观测窗口结束的月数 = 观测窗口的结束时间 - 入会时间 [单位：月]</p>
+Membertimemonth = time - time [unit：month]</p>
 <p>（2） R = LAST_TO_END 
-客户最近一次乘坐公司飞机距观测窗口结束的月数 = 最后一次乘机时间至观测窗口末端时长 [单位：月]</p>
+customermonth = timehour [unit：month]</p>
 <p>（3） F = FLIGHT_COUNT 
-客户在观测窗口内乘坐公司飞机的次数 = 观测窗口的飞行次数 [单位：次]</p>
+customer = Flight Count [unit：]</p>
 <p>（4） M = SEG_KM_SUM 
-客户在观测时间内在公司累计的飞行里程 = 观测窗口的总飞行公里数 [单位：公里]</p>
+customertimeFlight Mileage =  [unit：]</p>
 <p>（5） C = AVG_DISCOUNT 
-客户在观测时间内乘坐舱位所对应的折扣系数的平均值 = 平均折扣率 [单位：无]</p>
-<p>将5个指标数据提取之后，对每个指标数据分布情况进行分析，可以观察到，5个指标的取值范围数据差异较大，为了消除数量级数据带来的影响，需要对数据进行标准化处理。</p>
-<p>本实验我们采用标准差来对数据进行标准化处理,标准差标准化处理后，形成ZL,ZR,ZF,ZM,ZC5个属性的数据。</p>
+customertimemean = Discount Rate [unit：]</p>
+<p>5dataextract，dataDistributionanalysis，，5data，Countdata，need to dataprocessing。</p>
+<p>using stddataprocessing,stdprocessing，ZL,ZR,ZF,ZM,ZC5attributedata。</p>
 
 </div>
 </div>
@@ -15448,22 +15448,22 @@ Monetary 消费金额
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datafile</span> <span class="o">=</span> <span class="s1">&#39;./tmp/data_stipu.csv&#39;</span>
-<span class="n">standrandfile</span> <span class="o">=</span> <span class="s1">&#39;./tmp/data_stand.csv&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datafile</span> <span class="o">=</span> <span class="s1">'./tmp/data_stipu.csv'</span>
+<span class="n">standrandfile</span> <span class="o">=</span> <span class="s1">'./tmp/data_stand.csv'</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">)</span>
 
-<span class="c1">#数据变换</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;LAST_TO_END&#39;</span><span class="p">,</span><span class="s1">&#39;FLIGHT_COUNT&#39;</span><span class="p">,</span><span class="s1">&#39;SEG_KM_SUM&#39;</span><span class="p">,</span><span class="s1">&#39;avg_discount&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="c1">#数据副本的复制</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;LOAD_TIME&#39;</span><span class="p">])</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;FFP_DATE&#39;</span><span class="p">]))</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span><span class="o">/</span><span class="mi">30</span><span class="c1">#计算日期差,单位为月</span>
-<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;LAST_TO_END&#39;</span><span class="p">:</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="s1">&#39;FLIGHT_COUNT&#39;</span><span class="p">:</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;SEG_KM_SUM&#39;</span><span class="p">:</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s1">&#39;avg_discount&#39;</span><span class="p">:</span><span class="s1">&#39;C&#39;</span><span class="p">},</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="c1">#列名重命名</span>
+<span class="c1">#Data Transformation</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">'LAST_TO_END'</span><span class="p">,</span><span class="s1">'FLIGHT_COUNT'</span><span class="p">,</span><span class="s1">'SEG_KM_SUM'</span><span class="p">,</span><span class="s1">'avg_discount'</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="c1">#data</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'L'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'LOAD_TIME'</span><span class="p">])</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'FFP_DATE'</span><span class="p">]))</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span><span class="o">/</span><span class="mi">30</span><span class="c1">#calculatedate,unitmonth</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'LAST_TO_END'</span><span class="p">:</span><span class="s1">'R'</span><span class="p">,</span><span class="s1">'FLIGHT_COUNT'</span><span class="p">:</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'SEG_KM_SUM'</span><span class="p">:</span><span class="s1">'M'</span><span class="p">,</span><span class="s1">'avg_discount'</span><span class="p">:</span><span class="s1">'C'</span><span class="p">},</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="c1">#</span>
 
-<span class="c1">#数据标准化</span>
-<span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="c1">#均值标准化</span>
-<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="o">+</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span><span class="c1">#对数据列名重命名</span>
+<span class="c1">#data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="c1">#</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'z'</span><span class="o">+</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span><span class="c1">#data</span>
 
 <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">standrandfile</span><span class="p">)</span>
 </pre></div>
@@ -15478,7 +15478,7 @@ Monetary 消费金额
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
@@ -15635,11 +15635,11 @@ Monetary 消费金额
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4%E3%80%81%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90">4&#12289;&#32858;&#31867;&#20998;&#26512;<a class="anchor-link" href="#4%E3%80%81%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90">&#182;</a></h3><h4 id="%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA">&#27169;&#22411;&#26500;&#24314;<a class="anchor-link" href="#%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA">&#182;</a></h4><p>对于客户价值分析模型构建主要分为两个部分：</p>
-<p>1.根据LRFMC模型的5个指标的数据，对客户进行聚类分群。</p>
-<p>2.结合业务对每个客户群进行特征分析，分析其客户价值，并对客户群进行价值排名。</p>
-<h4 id="%E5%AE%A2%E6%88%B7%E8%81%9A%E7%B1%BB">&#23458;&#25143;&#32858;&#31867;<a class="anchor-link" href="#%E5%AE%A2%E6%88%B7%E8%81%9A%E7%B1%BB">&#182;</a></h4><p>本实验采用K-means聚类算法对客户数据进行客户分群，聚类的个数需要结合具体业务来确定。在本实验中由于指标个数，将客户聚成5类。</p>
-<p>K-Means算法使用sklearn库来实现。</p>
+<h3 id="4%E3%80%81%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90">4、Cluster Analysis<a class="anchor-link" href="#4%E3%80%81%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90">¶</a></h3><h4 id="%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA">Model Building<a class="anchor-link" href="#%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA">¶</a></h4><p>customeranalysisModel Buildingmain minuteminute：</p>
+<p>1.based on LRFMCmodel5data，customerclusteringminute。</p>
+<p>2.Customer Groupfeatureanalysis，analysiscustomer，Customer GroupRank。</p>
+<h4 id="%E5%AE%A2%E6%88%B7%E8%81%9A%E7%B1%BB">customerclustering<a class="anchor-link" href="#%E5%AE%A2%E6%88%B7%E8%81%9A%E7%B1%BB">¶</a></h4><p>using K-meansclusteringalgorithmcustomerdatacustomerminute，clusteringneed to specific 。，customer5。</p>
+<p>K-Meansalgorithmusing sklearn。</p>
 
 </div>
 </div>
@@ -15649,20 +15649,20 @@ Monetary 消费金额
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span> <span class="c1">#导入K均值聚类算法</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span> <span class="c1">#importKclusteringalgorithm</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
 
-<span class="n">inputfile</span> <span class="o">=</span> <span class="s1">&#39;./tmp/data_stand.csv&#39;</span> <span class="c1">#待聚类的数据文件</span>
-<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>                    <span class="c1">#需要进行的聚类类别数</span>
+<span class="n">inputfile</span> <span class="o">=</span> <span class="s1">'./tmp/data_stand.csv'</span> <span class="c1">#clusteringdatafile</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>                    <span class="c1">#need to clustering</span>
 
-<span class="c1">#读取数据，选取5个特征进行聚类分析</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">inputfile</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#读取数据</span>
+<span class="c1">#data，5featureCluster Analysis</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">inputfile</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'Unnamed: 0'</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#data</span>
 <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -15766,14 +15766,14 @@ Monetary 消费金额
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#调用k-means算法，进行聚类分析</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#k-meansalgorithm，Cluster Analysis</span>
 <span class="n">kmodel</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="n">k</span><span class="p">)</span> 
-<span class="n">kmodel</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1">#训练模型</span>
+<span class="n">kmodel</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1">#trainingmodel</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">kmodel</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">)</span> <span class="c1">#查看聚类中心</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kmodel</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">)</span> <span class="c1">#viewclustering</span>
 </pre></div>
 
      </div>
@@ -15793,7 +15793,7 @@ Monetary 消费金额
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>C:\Users\Administrator\Envs\jv\lib\site-packages\sklearn\cluster\_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+<pre>C:\Users\Administrator\Envs\jv\lib\site-packages\sklearn\cluster\_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
   warnings.warn(
 </pre>
 </div>
@@ -15824,7 +15824,7 @@ Monetary 消费金额
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>我们可以看到通过使用聚类算法对客户进行聚类分群的结果。但由于K-Means聚类算法是随机选择类标号，故重复实验时得到的结果可能与上述结果有些出入。另外，由于算法的精度问题，重复实验得到的聚类中心也略有不同。</p>
+<p>We can see through using clusteringalgorithmcustomerclusteringminuteresult。K-Meansclusteringalgorithm，hourresultresult。，algorithm，clusteringdifferent 。</p>
 
 </div>
 </div>
@@ -15836,7 +15836,7 @@ Monetary 消费金额
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="5%E3%80%81%E5%AE%A2%E6%88%B7%E4%BB%B7%E5%80%BC%E5%88%86%E6%9E%90">5&#12289;&#23458;&#25143;&#20215;&#20540;&#20998;&#26512;<a class="anchor-link" href="#5%E3%80%81%E5%AE%A2%E6%88%B7%E4%BB%B7%E5%80%BC%E5%88%86%E6%9E%90">&#182;</a></h3><p>针对聚类结果，我们使用雷达图使得聚类结果可视化，更加直观的分析各个用户群的特征。</p>
+<h3 id="5%E3%80%81%E5%AE%A2%E6%88%B7%E4%BB%B7%E5%80%BC%E5%88%86%E6%9E%90">5、customeranalysis<a class="anchor-link" href="#5%E3%80%81%E5%AE%A2%E6%88%B7%E4%BB%B7%E5%80%BC%E5%88%86%E6%9E%90">¶</a></h3><p>clusteringresult，using clusteringresultvisualization，analysisuserfeature。</p>
 
 </div>
 </div>
@@ -15846,22 +15846,22 @@ Monetary 消费金额
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">labels</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="c1">#标签</span>
-<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#数据个数</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="c1">#label</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#data</span>
 
 <span class="n">plot_data</span> <span class="o">=</span> <span class="n">kmodel</span><span class="o">.</span><span class="n">cluster_centers_</span>
-<span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="c1">#指定颜色</span>
+<span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">]</span> <span class="c1">#</span>
 
 <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">plot_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">plot_data</span><span class="p">,</span> <span class="n">plot_data</span><span class="p">[:,[</span><span class="mi">0</span><span class="p">]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 闭合</span>
-<span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">angles</span><span class="p">,</span> <span class="p">[</span><span class="n">angles</span><span class="p">[</span><span class="mi">0</span><span class="p">]]))</span> <span class="c1"># 闭合</span>
-<span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;zR&#39;</span><span class="p">)</span>
+<span class="n">plot_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">plot_data</span><span class="p">,</span> <span class="n">plot_data</span><span class="p">[:,[</span><span class="mi">0</span><span class="p">]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">angles</span><span class="p">,</span> <span class="p">[</span><span class="n">angles</span><span class="p">[</span><span class="mi">0</span><span class="p">]]))</span> <span class="c1"># </span>
+<span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'zR'</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">plot_data</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
@@ -15889,7 +15889,7 @@ Monetary 消费金额
  [-0.79940684  2.48313493  2.42423773  0.3097848   0.48354786 -0.79940684]
  [-0.37743534 -0.08663489 -0.09454128 -0.15689175  1.16093248 -0.37743534]
  [ 1.68695486 -0.57391605 -0.53673989 -0.17521822 -0.31318596  1.68695486]]
-[&#39;zR&#39;, &#39;zF&#39;, &#39;zM&#39;, &#39;zC&#39;, &#39;zL&#39;, &#39;zR&#39;]
+['zR', 'zF', 'zM', 'zC', 'zL', 'zR']
 </pre>
 </div>
 </div>
@@ -15903,17 +15903,17 @@ Monetary 消费金额
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 对5个聚类中心点进行可视化</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 5clusteringvisualization</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">polar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#polar参数！！</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">polar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#polarparameter！！</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plot_data</span><span class="p">)):</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">plot_data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;customer&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="c1"># 画线</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_rgrids</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">fontproperties</span><span class="o">=</span><span class="s2">&quot;SimHei&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_thetagrids</span><span class="p">(</span><span class="n">angles</span> <span class="o">*</span> <span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">fontproperties</span><span class="o">=</span><span class="s2">&quot;SimHei&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">plot_data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">'o-'</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">'customer'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="c1"># </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_rgrids</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">fontproperties</span><span class="o">=</span><span class="s2">"SimHei"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_thetagrids</span><span class="p">(</span><span class="n">angles</span> <span class="o">*</span> <span class="mi">180</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">fontproperties</span><span class="o">=</span><span class="s2">"SimHei"</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -15958,14 +15958,14 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>接下来，我们针对可视化结果对数据特征进行分析。</p>
-<p>其中，客户群1在R上属性最大，在F、M上属性最小；客户群2在C上属性最大；
-客户群3在F、M属性上最大，在R属性上最小；
-客户群4在L、R属性上最小；
-客户群5在L属性上最大。</p>
-<p>结合业务分析，通过比较各个指标在群间的大小对某一个群的特征进行评价分析。</p>
-<p>对于LRMFC模型，其L\M\F\C指标越大越好，R指标越小越好，我们根据聚类中心结果来对各个客户群进行特征划分。</p>
-<p>依此找出每个特征对应的最大值、最小值、次大值、次小值。</p>
+<p>，visualizationresultdatafeatureanalysis。</p>
+<p>，Customer Group1Rattribute，F、Mattribute；Customer Group2Cattribute；
+Customer Group3F、Mattribute，Rattribute；
+Customer Group4L、Rattribute；
+Customer Group5Lattribute。</p>
+<p>Business Analysis，through comparefeatureanalysis。</p>
+<p>LRMFCmodel，L\M\F\C，R，based on clusteringresultCustomer Groupfeatureminute。</p>
+<p>featuremax、min、、。</p>
 
 </div>
 </div>
@@ -15980,34 +15980,34 @@ class="
 <table>
 <thead>
 <tr>
-  <th>客户群编号	</th>
-  <th>优势特征	</th>
-  <th>劣势特征</th>
+  <th>Customer Group	</th>
+  <th>feature	</th>
+  <th>feature</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>客户群1</td>
+  <td>Customer Group1</td>
   <td></td>
   <td>RFM</td>
 </tr>
 <tr>
-  <td>客户群2</td>
+  <td>Customer Group2</td>
   <td>C</td>
   <td>RFM</td>
 </tr>
 <tr>
-  <td>客户群3</td>
+  <td>Customer Group3</td>
   <td>FMR</td>
   <td></td>
 </tr>
 <tr>
-  <td>客户群4</td>
+  <td>Customer Group4</td>
   <td></td>
   <td>LC</td>
 </tr>
 <tr>
-  <td>客户群5</td>
+  <td>Customer Group5</td>
   <td>LFM</td>
   <td></td>
 </tr>
@@ -16024,24 +16024,24 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>由上述的特征分析图表说明每个客户群都有显著不同的表现特征，基于该特征描述，本实验案例中定义五个等级的客户类别：重要保持客户、重要发展客户、重要挽留客户、一般客户、低价值客户。其中每种客户类别的具体特征如下：</p>
+<p>featureanalysisdescriptionCustomer Groupdifferent feature，based on feature，customer：customer、customer、customer、customer、Value Customers。customerspecific feature：</p>
 <ul>
-<li><p>重要保持客户：这类客户的平均折扣率C较高，一般所乘坐的舱位等级较高，最近乘坐过本公司航班R低、乘坐的次数F或里程M较高。这些客户对于航空公司来说是高价值客户，相对来说所占的比例也偏小。航空公司应该优先将资源投放到他们呢身上，对他们进行差异化管理和一对一影响，提供这类用户的忠诚度与满意度，延长这类客户的高水平消费。</p>
+<li><p>customer：customerDiscount RateC，，R、FM。customerAirlineValue Customers，。Airline， and ，user，customer。</p>
 </li>
-<li><p>重要发展客户：这类客户的平均折扣率C较高，最近乘坐过本公司航班R低，但乘坐次数F或乘坐里程M较低。这类客户入会时间L短，他们是航空公司的潜在 价值客户。虽然这类客户目前的价值不是很高，但有很大的发展潜力。航空公司应努力促使这类客户增加在本公司的乘机消费和合作伙伴处的消费，增加客户的钱包份额。通过客户价值的提升，加强这类客户的满意度，提高他们转向竞争对手的转移成本，使他们逐渐称为公司的忠诚客户。</p>
+<li><p>customer：customerDiscount RateC，R，FM。customertimeL，Airline Value Customers。customer，。Airlinecustomer and ，customer。through customer，customer，，customer。</p>
 </li>
-<li><p>重要挽留客户：这类客户过去所乘航班的平均折扣率C、乘坐次数F或者里程数M较高，但已经较长时间没有乘坐本公司的航班R高或者使乘坐频率变小。他们的客户价值变化的不确定性很高。由于这些客户衰退的原因各不相同，所以掌握客户的最新信息、维持与客户的互动就显得尤为重要。航空公司应该根据这些客户的最近消费时间、消费次数的变化情况、推测客户消费的异动状况，并列出客户名单。对其采取一定的营销手段，延长客户的生命周期。</p>
+<li><p>customer：customerDiscount RateC、FM，timeR。customer。customer， so customerinfo、customer。Airlinebased on customertime、、customer，customer。，customer。</p>
 </li>
-<li><p>一般与低价值客户：这类客户所乘航班的平均折扣率C很低，较长时间没有乘坐过本公司航班R高，乘坐次数F或者里程M较低，入会时间L短。这些客户的价值较低，可能是在航空公司机票打折促销时，才会乘坐本公司航班。</p>
+<li><p>Value Customers：customerDiscount RateC，timeR，FM，timeL。customer，Airlinehour，。</p>
 </li>
 </ul>
-<p>根据特征定义我们可以将客户群分类：</p>
-<p>客户群1，R为最大值，FM为最小值。可见这类客户最近乘机次数少，里程也较小。故为一般客户。 
-客户群2，C值最大，R次大，FM为次小值。可见这类客户最近乘机次数少，但其折扣率较大，成绩次数和里程也偏小。故为重要发展客户。 
-客户群3，F,M为最大值，R为最小值。完全符合重要保持客户。 
-客户群4，L,C为最小值，即入会时间短，且折扣率小。应归属到低价值客户。 
-客户群5，L为最大值，F,M为次大值。这类客户入会时间长，乘机次数和总里程偏大，最近乘机时间并未表现明显增加。故为重要挽留客户。</p>
-<p>对客户进行特征划分后，针对不同类型的客户群提供不同的产品和服务，提升重要发展客户的价值、稳定和延长重要保持客户的高水平消费、防范重要挽留客户的流失并积极进行关系恢复。</p>
+<p>based on featureCustomer Groupclassification：</p>
+<p>Customer Group1，Rmax，FMmin。customer，。customer。 
+Customer Group2，C，R，FM。customer，Discount Rate， and 。customer。 
+Customer Group3，F,Mmax，Rmin。customer。 
+Customer Group4，L,Cmin，time，Discount Rate。Value Customers。 
+Customer Group5，Lmax，F,M。customertime， and ，time。customer。</p>
+<p>customerfeatureminute，different Customer Groupdifferent  and ，customer、 and customer、customer。</p>
 
 </div>
 </div>
@@ -16051,7 +16051,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 

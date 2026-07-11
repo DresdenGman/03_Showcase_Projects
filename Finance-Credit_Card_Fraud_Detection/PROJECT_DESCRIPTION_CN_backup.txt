@@ -1,0 +1,34 @@
+PROJECT: Credit Card Fraud Detection
+================================================================================
+
+PROJECT OVERVIEW:
+This project addresses one of the most challenging problems in financial data science: 
+detecting fraudulent transactions in highly imbalanced datasets. The project demonstrates advanced techniques 
+for handling class imbalance, feature engineering, and model evaluation.
+
+Key Highlights:
+- Extensive Exploratory Data Analysis (EDA) on anonymized transaction data
+- Sophisticated handling of imbalanced datasets using multiple techniques:
+  * Oversampling methods
+  * Class weight adjustment
+  * Multiple sampling strategies
+- Implementation and comparison of multiple algorithms:
+  * Logistic Regression
+  * Decision Trees
+  * Advanced hyperparameter tuning
+- Comprehensive model evaluation using ROC curves, confusion matrices, and precision-recall metrics
+- Real-world application to financial security
+
+This project demonstrates exceptional problem-solving skills, deep understanding of machine learning challenges, 
+and the ability to apply advanced techniques to critical business problems.
+
+TECHNICAL STACK:
+pandas, numpy, matplotlib, plotly, scikit-learn, Logistic Regression, Decision Trees
+
+KEY SKILLS:
+Imbalanced Data Handling, Model Evaluation, Financial Analytics, Advanced ML Techniques
+
+PROJECT TYPE: Group Project
+
+This project demonstrates advanced data analysis capabilities, combining technical 
+expertise with business understanding to deliver actionable insights.

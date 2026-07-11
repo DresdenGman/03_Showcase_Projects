@@ -1,0 +1,28 @@
+PROJECT: Bike Sharing Demand Prediction
+================================================================================
+
+PROJECT OVERVIEW:
+This project demonstrates a complete machine learning workflow for predicting bike rental demand. 
+The project tackles a real-world time series prediction problem from Kaggle's Bike Sharing Demand competition, 
+showcasing expertise in data preprocessing, feature engineering, and model comparison.
+
+Key Highlights:
+- Comprehensive data understanding and exploratory analysis
+- Advanced preprocessing including date feature extraction, missing value handling, and outlier detection
+- Model comparison between Support Vector Machine (SVM) and Random Forest algorithms
+- Feature importance analysis to understand driving factors
+- Practical application to urban mobility planning
+
+This project showcases strong technical skills in machine learning, statistical analysis, and data visualization, 
+demonstrating the ability to work with real-world datasets and deliver actionable insights.
+
+TECHNICAL STACK:
+pandas, numpy, matplotlib, seaborn, scikit-learn, SVM, Random Forest
+
+KEY SKILLS:
+Time Series Analysis, Feature Engineering, Model Comparison, Data Visualization
+
+PROJECT TYPE: Group Project
+
+This project demonstrates advanced data analysis capabilities, combining technical 
+expertise with business understanding to deliver actionable insights.

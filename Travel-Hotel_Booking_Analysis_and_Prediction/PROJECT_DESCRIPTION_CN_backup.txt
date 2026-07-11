@@ -1,0 +1,37 @@
+PROJECT: Hotel Booking Analysis and Prediction
+================================================================================
+
+PROJECT OVERVIEW:
+This comprehensive project combines exploratory data analysis with predictive modeling 
+to understand hotel booking patterns and predict cancellations. The project demonstrates expertise in 
+business analytics, customer behavior analysis, and multi-algorithm modeling.
+
+Key Highlights:
+- Deep dive into hotel booking data with 10+ dimensions of analysis:
+  * Booking and cancellation patterns
+  * Monthly booking trends
+  * Guest origin and cancellation rates
+  * Customer segmentation
+  * Booking channels analysis
+  * Revenue analysis by guest type
+- Advanced data preprocessing for both categorical and continuous variables
+- Correlation analysis to identify key predictors
+- Multi-model approach using:
+  * Random Forest
+  * XGBoost (Gradient Boosting)
+  * Logistic Regression
+- Business insights for revenue optimization and customer retention
+
+This project showcases strong business acumen, analytical thinking, and the ability to translate 
+data insights into actionable business strategies.
+
+TECHNICAL STACK:
+pandas, numpy, matplotlib, seaborn, scikit-learn, XGBoost, Random Forest, Logistic Regression
+
+KEY SKILLS:
+Business Analytics, Customer Segmentation, Predictive Modeling, Multi-algorithm Comparison
+
+PROJECT TYPE: Group Project
+
+This project demonstrates advanced data analysis capabilities, combining technical 
+expertise with business understanding to deliver actionable insights.

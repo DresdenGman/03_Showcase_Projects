@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>自行车租赁数量预测</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Countprediction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14598,7 +14598,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#项目介绍" data-toc-modified-id="项目介绍-1">项目介绍</a></span><ul class="toc-item"><li><ul class="toc-item"><li><span><a href="#关键词" data-toc-modified-id="关键词-1.0.1">关键词</a></span></li></ul></li></ul></li><li><span><a href="#数据理解" data-toc-modified-id="数据理解-2">数据理解</a></span></li><li><span><a href="#数据预处理" data-toc-modified-id="数据预处理-3">数据预处理</a></span><ul class="toc-item"><li><span><a href="#日期处理" data-toc-modified-id="日期处理-3.1">日期处理</a></span></li><li><span><a href="#缺失值处理" data-toc-modified-id="缺失值处理-3.2">缺失值处理</a></span></li><li><span><a href="#异常值处理" data-toc-modified-id="异常值处理-3.3">异常值处理</a></span></li></ul></li><li><span><a href="#使用支持向量机和随机森林分别建模" data-toc-modified-id="使用支持向量机和随机森林分别建模-4">使用支持向量机和随机森林分别建模</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Project Introduction" data-toc-modified-id="Project Introduction-1">Project Introduction</a></span><ul class="toc-item"><li><ul class="toc-item"><li><span><a href="#Keywords" data-toc-modified-id="Keywords-1.0.1">Keywords</a></span></li></ul></li></ul></li><li><span><a href="#Data Understanding" data-toc-modified-id="Data Understanding-2">Data Understanding</a></span></li><li><span><a href="#Data Preprocessing" data-toc-modified-id="Data Preprocessing-3">Data Preprocessing</a></span><ul class="toc-item"><li><span><a href="#dateprocessing" data-toc-modified-id="dateprocessing-3.1">dateprocessing</a></span></li><li><span><a href="#missing valuesprocessing" data-toc-modified-id="missing valuesprocessing-3.2">missing valuesprocessing</a></span></li><li><span><a href="#processing" data-toc-modified-id="processing-3.3">processing</a></span></li></ul></li><li><span><a href="#using SVM and Random ForestrespectivelyModeling" data-toc-modified-id="using SVM and Random ForestrespectivelyModeling-4">using SVM and Random ForestrespectivelyModeling</a></span></li></ul></div>
 
 </div>
 </div>
@@ -14610,7 +14610,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">&#39033;&#30446;&#20171;&#32461;<a class="anchor-link" href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">&#182;</a></h2>
+<h2 id="%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">Project Introduction<a class="anchor-link" href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">¶</a></h2>
 </div>
 </div>
 </div>
@@ -14621,17 +14621,17 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>对kaggle数据挖掘大赛中的Bike Sharing Demand（自行车共享需求）数据进行分析，
-并进行了数据预处理，建模比较相关操作，最终得出一个随机森林模型，
-根据时间，季节，温度等特征可以不错的预测自行车的租赁数量。</p>
-<p>数据来源：<a href="https://www.kaggle.com/c/bike-sharing-demand/data">https://www.kaggle.com/c/bike-sharing-demand/data</a></p>
-<p>具体步骤</p>
+<p>kaggledataBike Sharing Demand（）dataanalysis，
+Data Preprocessing，Modelingcomparerelated ，Random Forestmodel，
+based on time，Season，featurepredictionCount。</p>
+<p>data：<a href="https://www.kaggle.com/c/bike-sharing-demand/data">https://www.kaggle.com/c/bike-sharing-demand/data</a></p>
+<p>specific </p>
 <ul>
-<li>步骤一：数据理解，对样本的数据理解，分析一下数据的各个字段的意义，以及数据的分布，对数据集的一个大概的描述。</li>
-<li>步骤二：数据预处理，对样本数据的一些列进行处理，处理日期数据，缺失值处理以及异常值处理。</li>
-<li>步骤三：建模，对预处理完毕的数据集进行划分训练集和测试集，用两种算法分别建模。</li>
-<li>步骤四：进行模型评估比较。</li>
-<li>步骤五：对模型的预测情况进行可视化分析特征重要性。</li>
+<li>：Data Understanding，sampleData Understanding，analysisdata，and dataDistribution，dataset。</li>
+<li>：Data Preprocessing，sampledataprocessing，processingdatedata，missing valuesprocessingand processing。</li>
+<li>：Modeling，processingdatasetminutetraining set and test set，algorithmrespectivelyModeling。</li>
+<li>：Model Evaluationcompare。</li>
+<li>：modelpredictionVisualization AnalysisFeature Importance。</li>
 </ul>
 
 </div>
@@ -14644,13 +14644,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>需安装包：</p>
+<p>：</p>
 <p>pip install numpy -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a>  --trusted-host pypi.tuna.tsinghua.edu.cn</p>
 <p>pip install pandas -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a>  --trusted-host pypi.tuna.tsinghua.edu.cn</p>
 <p>pip install matplotlib -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a>  --trusted-host pypi.tuna.tsinghua.edu.cn</p>
 <p>pip install seaborn -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a>  --trusted-host pypi.tuna.tsinghua.edu.cn</p>
 <p>pip install scikit-learn  -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a>  --trusted-host pypi.tuna.tsinghua.edu.cn</p>
-<h4 id="%E5%85%B3%E9%94%AE%E8%AF%8D">&#20851;&#38190;&#35789;<a class="anchor-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D">&#182;</a></h4><p>支持向量机、随机森林</p>
+<h4 id="%E5%85%B3%E9%94%AE%E8%AF%8D">Keywords<a class="anchor-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D">¶</a></h4><p>SVM、Random Forest</p>
 
 </div>
 </div>
@@ -14662,7 +14662,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="%E6%95%B0%E6%8D%AE%E7%90%86%E8%A7%A3">&#25968;&#25454;&#29702;&#35299;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE%E7%90%86%E8%A7%A3">&#182;</a></h2>
+<h2 id="%E6%95%B0%E6%8D%AE%E7%90%86%E8%A7%A3">Data Understanding<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE%E7%90%86%E8%A7%A3">¶</a></h2>
 </div>
 </div>
 </div>
@@ -14671,7 +14671,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -14689,11 +14689,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 读取数据文件</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./train.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Read datafile</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'./train.csv'</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14706,10 +14706,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 查看数据集具体情况</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># View dataspecific </span>
 <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
@@ -14730,7 +14730,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<pre><class 'pandas.core.frame.DataFrame'>
 RangeIndex: 10886 entries, 0 to 10885
 Data columns (total 12 columns):
  #   Column      Non-Null Count  Dtype  
@@ -14764,26 +14764,26 @@ memory usage: 1020.7+ KB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>各个字段的意思</p>
+<p></p>
 <ul>
-<li>datetime 精确到小时的一个具体时间</li>
-<li>season 1.春天 2.夏天 3.秋天 4.冬天</li>
-<li>holiday 当天是否是节假日 0 不是 1 是</li>
-<li>workingday 当天是否是工作日 0 不是 1 是</li>
-<li>weather 天气情况<ul>
-<li>1 晴，少云，半阴，半阴</li>
-<li>2 雾+多云，雾+碎云，雾+几云，雾</li>
-<li>3 小雪，小雨+雷雨+散云，小雨+散云</li>
-<li>4 大雨+冰雹+雷暴+雾，雪+雾</li>
+<li>datetime hourspecific time</li>
+<li>season 1.days 2.days 3.days 4.days</li>
+<li>holiday daysday 0  1 </li>
+<li>workingday daysday 0  1 </li>
+<li>weather days<ul>
+<li>1 ，，，</li>
+<li>2 +，+，+，</li>
+<li>3 ，++，+</li>
+<li>4 +++，+</li>
 </ul>
 </li>
-<li>temp 具体温度</li>
-<li>atemp 体感温度</li>
-<li>humidity 相对湿度</li>
-<li>windspeed 风速</li>
-<li>casual 用车的未注册用户的数量</li>
-<li>registered 用车的已注册用户的数量</li>
-<li>count 用车人数总数</li>
+<li>temp specific </li>
+<li>atemp </li>
+<li>humidity </li>
+<li>windspeed </li>
+<li>casual userCount</li>
+<li>registered userCount</li>
+<li>count </li>
 </ul>
 
 </div>
@@ -14794,10 +14794,10 @@ memory usage: 1020.7+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 看一下前五条，看具体的数据情况</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ，specific data</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -14943,10 +14943,10 @@ memory usage: 1020.7+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 再更具体的查看信息</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># specific viewinfo</span>
 <span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
@@ -15130,7 +15130,7 @@ memory usage: 1020.7+ KB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>现在可以看到没有什么特别离谱的数字，比如season最大是4也符合我们范围，假期工作日天气等等，还可以留意一下每小时大概是190人租车（参考count的平均值）</p>
+<p>We can see ， e.g., season4，daydays，hour190（countmean）</p>
 
 </div>
 </div>
@@ -15140,10 +15140,10 @@ memory usage: 1020.7+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>    <span class="c1"># 使用hist查看每一列的分布直方图</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>    <span class="c1"># using histviewDistribution</span>
 </pre></div>
 
      </div>
@@ -15165,17 +15165,17 @@ memory usage: 1020.7+ KB
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[&lt;AxesSubplot: title={&#39;center&#39;: &#39;season&#39;}&gt;,
-        &lt;AxesSubplot: title={&#39;center&#39;: &#39;holiday&#39;}&gt;,
-        &lt;AxesSubplot: title={&#39;center&#39;: &#39;workingday&#39;}&gt;],
-       [&lt;AxesSubplot: title={&#39;center&#39;: &#39;weather&#39;}&gt;,
-        &lt;AxesSubplot: title={&#39;center&#39;: &#39;temp&#39;}&gt;,
-        &lt;AxesSubplot: title={&#39;center&#39;: &#39;atemp&#39;}&gt;],
-       [&lt;AxesSubplot: title={&#39;center&#39;: &#39;humidity&#39;}&gt;,
-        &lt;AxesSubplot: title={&#39;center&#39;: &#39;windspeed&#39;}&gt;,
-        &lt;AxesSubplot: title={&#39;center&#39;: &#39;casual&#39;}&gt;],
-       [&lt;AxesSubplot: title={&#39;center&#39;: &#39;registered&#39;}&gt;,
-        &lt;AxesSubplot: title={&#39;center&#39;: &#39;count&#39;}&gt;, &lt;AxesSubplot: &gt;]],
+<pre>array([[<AxesSubplot: title={'center': 'season'}>,
+        <AxesSubplot: title={'center': 'holiday'}>,
+        <AxesSubplot: title={'center': 'workingday'}>],
+       [<AxesSubplot: title={'center': 'weather'}>,
+        <AxesSubplot: title={'center': 'temp'}>,
+        <AxesSubplot: title={'center': 'atemp'}>],
+       [<AxesSubplot: title={'center': 'humidity'}>,
+        <AxesSubplot: title={'center': 'windspeed'}>,
+        <AxesSubplot: title={'center': 'casual'}>],
+       [<AxesSubplot: title={'center': 'registered'}>,
+        <AxesSubplot: title={'center': 'count'}>, <AxesSubplot: >]],
       dtype=object)</pre>
 </div>
 
@@ -15206,10 +15206,10 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 查看相关度</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># viewrelated </span>
 <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
 </pre></div>
 
@@ -15444,15 +15444,15 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 使用热度图可视化这个相关系数矩阵</span>
-<span class="c1"># 要先导入seaborn包 Seaborn是基于matplotlib的图形可视化python包。它提供了一种高度交互式界面，便于用户能够做出各种有吸引力的统计图表</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># using visualizationrelated </span>
+<span class="c1"># importseaborn Seabornbased on matplotlibvisualizationpython。，uservarious </span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="n">corr</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># 设置画布大小</span>
-<span class="c1"># annot默认为False，当annot为True时，会在heatmap中每个方格写入数据，更便于查看</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># </span>
+<span class="c1"># annotFalse，annotTruehour，heatmapdata，view</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
@@ -15486,7 +15486,7 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;AxesSubplot: &gt;</pre>
+<pre><AxesSubplot: ></pre>
 </div>
 
 </div>
@@ -15518,7 +15518,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86">&#25968;&#25454;&#39044;&#22788;&#29702;<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86">&#182;</a></h2>
+<h2 id="%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86">Data Preprocessing<a class="anchor-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86">¶</a></h2>
 </div>
 </div>
 </div>
@@ -15527,11 +15527,11 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 为了保险起见，我们还是复制一份副本来预处理，出问题了我们有原版</span>
-<span class="c1"># deep参数默认为True，</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ，processing，</span>
+<span class="c1"># deepparameterTrue，</span>
 <span class="n">df_copy</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
@@ -15545,7 +15545,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_copy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -15693,7 +15693,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_copy</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -15716,7 +15716,7 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<pre><class 'pandas.core.frame.DataFrame'>
 RangeIndex: 10886 entries, 0 to 10885
 Data columns (total 12 columns):
  #   Column      Non-Null Count  Dtype  
@@ -15750,7 +15750,7 @@ memory usage: 1020.7+ KB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86">&#26085;&#26399;&#22788;&#29702;<a class="anchor-link" href="#%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86">&#182;</a></h3>
+<h3 id="%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86">dateprocessing<a class="anchor-link" href="#%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86">¶</a></h3>
 </div>
 </div>
 </div>
@@ -15759,15 +15759,15 @@ memory usage: 1020.7+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 先把这个日期处理一下</span>
-<span class="c1"># 分为月 周几 小时 pd.DatetimeIndex 是把某一列进行转换，同时把该列的数据设置为索引 index</span>
-<span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df_copy</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span><span class="o">.</span><span class="n">month</span>
-<span class="c1"># 周末可能和周一到周五的不一样 所以提取一下是星期几 0-6 周一到周日</span>
-<span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df_copy</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span><span class="o">.</span><span class="n">weekday</span>
-<span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df_copy</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span><span class="o">.</span><span class="n">hour</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># dateprocessing</span>
+<span class="c1"># minutemonth  hour pd.DatetimeIndex ，hourdata index</span>
+<span class="n">df_copy</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df_copy</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span><span class="o">.</span><span class="n">month</span>
+<span class="c1">#  and   so extract 0-6 day</span>
+<span class="n">df_copy</span><span class="p">[</span><span class="s1">'day'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df_copy</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span><span class="o">.</span><span class="n">weekday</span>
+<span class="n">df_copy</span><span class="p">[</span><span class="s1">'hour'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df_copy</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span><span class="o">.</span><span class="n">hour</span>
 </pre></div>
 
      </div>
@@ -15780,7 +15780,7 @@ memory usage: 1020.7+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_copy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -15946,11 +15946,11 @@ memory usage: 1020.7+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 既然把datetime拆分为了三列，就可以把原来这个删除了</span>
-<span class="n">df_copy</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;datetime&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># datetimeminute，</span>
+<span class="n">df_copy</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'datetime'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15963,10 +15963,10 @@ memory usage: 1020.7+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 查看一下具体信息</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># viewspecific info</span>
 <span class="n">df_copy</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
@@ -15987,7 +15987,7 @@ memory usage: 1020.7+ KB
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+<pre><class 'pandas.core.frame.DataFrame'>
 RangeIndex: 10886 entries, 0 to 10885
 Data columns (total 14 columns):
  #   Column      Non-Null Count  Dtype  
@@ -16021,7 +16021,7 @@ memory usage: 1.2 MB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_copy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -16183,7 +16183,7 @@ memory usage: 1.2 MB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86">&#32570;&#22833;&#20540;&#22788;&#29702;<a class="anchor-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86">&#182;</a></h3>
+<h3 id="%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86">missing valuesprocessing<a class="anchor-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86">¶</a></h3>
 </div>
 </div>
 </div>
@@ -16192,7 +16192,7 @@ memory usage: 1.2 MB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_copy</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -16247,7 +16247,7 @@ dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>可以看到是没有缺失值的，所以可以先不必处理，再看看有没有异常值</p>
+<p>We can see missing values， so processing，</p>
 
 </div>
 </div>
@@ -16259,7 +16259,7 @@ dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="%E5%BC%82%E5%B8%B8%E5%80%BC%E5%A4%84%E7%90%86">&#24322;&#24120;&#20540;&#22788;&#29702;<a class="anchor-link" href="#%E5%BC%82%E5%B8%B8%E5%80%BC%E5%A4%84%E7%90%86">&#182;</a></h3>
+<h3 id="%E5%BC%82%E5%B8%B8%E5%80%BC%E5%A4%84%E7%90%86">processing<a class="anchor-link" href="#%E5%BC%82%E5%B8%B8%E5%80%BC%E5%A4%84%E7%90%86">¶</a></h3>
 </div>
 </div>
 </div>
@@ -16268,11 +16268,11 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 画出每个特征的箱图，分析离群点</span>
-<span class="n">df_copy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">14</span><span class="p">))</span><span class="c1"># 每个特征的箱图</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># feature，analysis</span>
+<span class="n">df_copy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'box'</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">14</span><span class="p">))</span><span class="c1"># feature</span>
 </pre></div>
 
      </div>
@@ -16340,7 +16340,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>可以看到windspeed风速是存在异常值的，对于未注册用车用户，和已注册用车用户对结果count没有作用，因为是先统计出来count再统计的这两个字段，所以没有实际作用，在给出预测数据的时候也不会提供这两个字段的值，所以对这两个字段不予处理，后续会删除，对于count再进行后续分析。</p>
+<p>We can see windspeedhas ，user， and userresultcount， because count， so ，predictiondatahour， so processing，，countanalysis。</p>
 
 </div>
 </div>
@@ -16350,17 +16350,17 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 处理风速的异常值</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">&quot;windspeed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">&quot;windspeed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
-<span class="c1"># 直接用的 “=” ，修改c的时候也会修改原数据集</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">&quot;windspeed&quot;</span><span class="p">]</span>
-<span class="c1"># 超过了上四分位1.5倍四分位距或下四分位1.5倍距离都算异常值，先设置为空值</span>
-<span class="n">c</span><span class="p">[(</span><span class="n">c</span><span class="o">&gt;=</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mf">1.5</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">c</span><span class="o">&lt;=</span><span class="n">b</span><span class="o">-</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mf">1.5</span><span class="p">)]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="c1"># 用中位数填充空值</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># processing</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">"windspeed"</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">"windspeed"</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="c1">#  “=” ，chourdataset</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">"windspeed"</span><span class="p">]</span>
+<span class="c1"># minute1.5minuteminute1.5，null</span>
+<span class="n">c</span><span class="p">[(</span><span class="n">c</span><span class="o">>=</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mf">1.5</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">c</span><span class="o"><=</span><span class="n">b</span><span class="o">-</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mf">1.5</span><span class="p">)]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="c1"># null</span>
 <span class="n">c</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">median</span><span class="p">(),</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
@@ -16385,7 +16385,7 @@ class="
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  c[(c&gt;=(a-b)*1.5+a)|(c&lt;=b-(a-b)*1.5)]=np.nan
+  c[(c>=(a-b)*1.5+a)|(c<=b-(a-b)*1.5)]=np.nan
 </pre>
 </div>
 </div>
@@ -16399,11 +16399,11 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 处理后的风速的箱线图</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;windspeed&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># processing</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">df_copy</span><span class="p">[</span><span class="s1">'windspeed'</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -16425,14 +16425,14 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;whiskers&#39;: [&lt;matplotlib.lines.Line2D at 0x217e5c92fa0&gt;,
-  &lt;matplotlib.lines.Line2D at 0x217e5ca3280&gt;],
- &#39;caps&#39;: [&lt;matplotlib.lines.Line2D at 0x217e5ca3520&gt;,
-  &lt;matplotlib.lines.Line2D at 0x217e5ca3730&gt;],
- &#39;boxes&#39;: [&lt;matplotlib.lines.Line2D at 0x217e5c92d00&gt;],
- &#39;medians&#39;: [&lt;matplotlib.lines.Line2D at 0x217e5ca39d0&gt;],
- &#39;fliers&#39;: [&lt;matplotlib.lines.Line2D at 0x217e5ca3ca0&gt;],
- &#39;means&#39;: []}</pre>
+<pre>{'whiskers': [<matplotlib.lines.Line2D at 0x217e5c92fa0>,
+  <matplotlib.lines.Line2D at 0x217e5ca3280>],
+ 'caps': [<matplotlib.lines.Line2D at 0x217e5ca3520>,
+  <matplotlib.lines.Line2D at 0x217e5ca3730>],
+ 'boxes': [<matplotlib.lines.Line2D at 0x217e5c92d00>],
+ 'medians': [<matplotlib.lines.Line2D at 0x217e5ca39d0>],
+ 'fliers': [<matplotlib.lines.Line2D at 0x217e5ca3ca0>],
+ 'means': []}</pre>
 </div>
 
 </div>
@@ -16464,7 +16464,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>可以看到风速这一列已经被处理完成</p>
+<p>We can see processing</p>
 
 </div>
 </div>
@@ -16474,14 +16474,14 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span>
-<span class="c1"># 查看异常值的个数</span>
-<span class="n">c</span><span class="p">[(</span><span class="n">c</span><span class="o">&gt;=</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mf">1.5</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">c</span><span class="o">&lt;=</span><span class="n">b</span><span class="o">-</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mf">1.5</span><span class="p">)]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">"count"</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">"count"</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s2">"count"</span><span class="p">]</span>
+<span class="c1"># view</span>
+<span class="n">c</span><span class="p">[(</span><span class="n">c</span><span class="o">>=</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mf">1.5</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">c</span><span class="o"><=</span><span class="n">b</span><span class="o">-</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mf">1.5</span><span class="p">)]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16517,11 +16517,11 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 查看一下count中异常值真的是是异常值吗</span>
-<span class="n">df_copy</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">600</span> <span class="p">][</span><span class="s1">&#39;hour&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># viewcount</span>
+<span class="n">df_copy</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_copy</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span> <span class="o">></span> <span class="mi">600</span> <span class="p">][</span><span class="s1">'hour'</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16543,7 +16543,7 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;AxesSubplot: &gt;</pre>
+<pre><AxesSubplot: ></pre>
 </div>
 
 </div>
@@ -16575,7 +16575,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>这个明显是早高峰和晚高峰，上下班的时间点，不太算异常值，但是还是查看一下下午五六点的时候租车数量是多少，如何分布。</p>
+<p> and ，time，，viewhourCount，Distribution。</p>
 
 </div>
 </div>
@@ -16585,10 +16585,10 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_copy</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;hour&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">18</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;hour&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">17</span><span class="p">)</span> <span class="p">][</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_copy</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_copy</span><span class="p">[</span><span class="s1">'hour'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">18</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_copy</span><span class="p">[</span><span class="s1">'hour'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">17</span><span class="p">)</span> <span class="p">][</span><span class="s1">'count'</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16610,7 +16610,7 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;AxesSubplot: &gt;</pre>
+<pre><AxesSubplot: ></pre>
 </div>
 
 </div>
@@ -16642,7 +16642,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>看分布来看的话，平时都是200-600，偶尔租车数量增加也是可以理解的，所以不处理count这一列了</p>
+<p>Distribution，hour200-600，Count， so processingcount</p>
 
 </div>
 </div>
@@ -16652,7 +16652,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_copy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -16812,11 +16812,11 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 现在只剩下注册用户和非注册用户，这两列直接做删除处理</span>
-<span class="n">df_copy</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;casual&#39;</span><span class="p">,</span><span class="s1">&#39;registered&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># user and user，processing</span>
+<span class="n">df_copy</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'casual'</span><span class="p">,</span><span class="s1">'registered'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">df_copy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -16964,8 +16964,8 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>数据预处理完毕，开始建模</p>
-<h2 id="%E4%BD%BF%E7%94%A8%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%E5%92%8C%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E5%88%86%E5%88%AB%E5%BB%BA%E6%A8%A1">&#20351;&#29992;&#25903;&#25345;&#21521;&#37327;&#26426;&#21644;&#38543;&#26426;&#26862;&#26519;&#20998;&#21035;&#24314;&#27169;<a class="anchor-link" href="#%E4%BD%BF%E7%94%A8%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%E5%92%8C%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E5%88%86%E5%88%AB%E5%BB%BA%E6%A8%A1">&#182;</a></h2>
+<p>Data Preprocessing，Modeling</p>
+<h2 id="%E4%BD%BF%E7%94%A8%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%E5%92%8C%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E5%88%86%E5%88%AB%E5%BB%BA%E6%A8%A1">using SVM and Random ForestrespectivelyModeling<a class="anchor-link" href="#%E4%BD%BF%E7%94%A8%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%E5%92%8C%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E5%88%86%E5%88%AB%E5%BB%BA%E6%A8%A1">¶</a></h2>
 </div>
 </div>
 </div>
@@ -16974,16 +16974,16 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 首先要明确这个是一个什么问题，对于租车数量的预测，目标变量是连续值，所以这是一个回归问题</span>
-<span class="c1"># 对于回归问题的建模 使用sklearn里面的 支持向量机 和 随机森林 分别建模</span>
-<span class="c1"># 分训练集和测试集，数据量还是比较多的（一万多条）所以直接按照常规划分方式，就不用k折交叉验证了</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;count&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ，Countprediction，variable， so regression</span>
+<span class="c1"># regressionModeling using sklearn SVM  and  Random Forest respectivelyModeling</span>
+<span class="c1"># minutetraining set and test set，datacompare（） so minute，kcross-validation</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'count'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="c1"># 设置一下随机种子，这样无论运行几次分测试集训练集都是相同的</span>
+<span class="c1"># ，minutetest settraining set</span>
 <span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
@@ -16997,13 +16997,13 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;训练数据集特征：&#39;</span><span class="p">,</span> <span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
-     <span class="s1">&#39;测试数据集特征：&#39;</span><span class="p">,</span> <span class="n">x_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;训练数据集标签：&#39;</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
-     <span class="s1">&#39;测试数据集标签：&#39;</span><span class="p">,</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'trainingdatasetfeature：'</span><span class="p">,</span> <span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+     <span class="s1">'testingdatasetfeature：'</span><span class="p">,</span> <span class="n">x_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'trainingdatasetlabel：'</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+     <span class="s1">'testingdatasetlabel：'</span><span class="p">,</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17023,8 +17023,8 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>训练数据集特征： (8708, 11) 测试数据集特征： (2178, 11)
-训练数据集标签： (8708,) 测试数据集标签： (2178,)
+<pre>trainingdatasetfeature： (8708, 11) testingdatasetfeature： (2178, 11)
+trainingdatasetlabel： (8708,) testingdatasetlabel： (2178,)
 </pre>
 </div>
 </div>
@@ -17038,12 +17038,12 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 随机森林建模</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Random ForestModeling</span>
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
-<span class="c1"># 树的个数设置为100</span>
+<span class="c1"># 100</span>
 <span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
@@ -17080,12 +17080,12 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 看看这个模型如何</span>
-<span class="c1"># score 得分 计算的是模型的R方值</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;训练集得分:</span><span class="si">{}</span><span class="s2">,测试集得分:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rf_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span><span class="n">rf_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># model</span>
+<span class="c1"># score Score calculatemodelR</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"training setScore:</span><span class="si">{}</span><span class="s2">,test setScore:</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rf_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span><span class="n">rf_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
 </pre></div>
 
      </div>
@@ -17105,7 +17105,7 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>训练集得分:0.9834717175896198,测试集得分:0.8746210351963886
+<pre>training setScore:0.9834717175896198,test setScore:0.8746210351963886
 </pre>
 </div>
 </div>
@@ -17119,15 +17119,15 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 支持向量机建模</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># SVMModeling</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
-<span class="c1"># C 惩罚系数 越大 越不允许误差存在 容易过拟合 趋于0的时候 越允许误差 容易欠拟合</span>
-<span class="c1"># gamma 核函数系数 越大越容易过拟合 越小越容易欠拟合</span>
-<span class="c1"># 尝试了多次得出来这一组参数表现还是不错的</span>
-<span class="n">s_model</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVR</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;rbf&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="c1"># C   errorhas  overfitting 0hour error </span>
+<span class="c1"># gamma  overfitting </span>
+<span class="c1"># parameter</span>
+<span class="n">s_model</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVR</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">'rbf'</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
 <span class="n">s_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 
@@ -17163,11 +17163,11 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 看看如何</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;训练集得分:</span><span class="si">{}</span><span class="s2">,测试集得分:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span><span class="n">s_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"training setScore:</span><span class="si">{}</span><span class="s2">,test setScore:</span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span><span class="n">s_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
 </pre></div>
 
      </div>
@@ -17187,7 +17187,7 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>训练集得分:0.4770298344792422,测试集得分:0.4487013950064256
+<pre>training setScore:0.4770298344792422,test setScore:0.4487013950064256
 </pre>
 </div>
 </div>
@@ -17201,16 +17201,16 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 模型评估</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Model evaluation</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">explained_variance_score</span>
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">rf_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;随机森林回归模型的可解释方差值为：&#39;</span><span class="p">,</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Random Forestregressionmodel：'</span><span class="p">,</span>
      <span class="n">explained_variance_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">))</span>
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">s_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;支持向量机回归模型的可解释方差值为：&#39;</span><span class="p">,</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'SVMregressionmodel：'</span><span class="p">,</span>
      <span class="n">explained_variance_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">))</span>
 </pre></div>
 
@@ -17231,8 +17231,8 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>随机森林回归模型的可解释方差值为： 0.8747174346696318
-支持向量机回归模型的可解释方差值为： 0.49800285482111617
+<pre>Random Forestregressionmodel： 0.8747174346696318
+SVMregressionmodel： 0.49800285482111617
 </pre>
 </div>
 </div>
@@ -17246,17 +17246,17 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 可视化一下随机森林的预测结果</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="c1">##设定空白画布，并制定大小</span>
-<span class="c1">##用不同的颜色表示不同数据</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># visualizationRandom ForestPrediction Results</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="c1">##，</span>
+<span class="c1">##different indicatesdifferent data</span>
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">rf_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">y_test</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">y_pred</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;real&#39;</span><span class="p">,</span><span class="s1">&#39;predict&#39;</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1">##显示图片</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">y_test</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">y_pred</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"-."</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">'real'</span><span class="p">,</span><span class="s1">'predict'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1">##</span>
 </pre></div>
 
      </div>
@@ -17296,17 +17296,17 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="c1">##设定空白画布，并制定大小</span>
-<span class="c1">##用不同的颜色表示不同数据</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">[:</span><span class="mi">100</span><span class="p">])),</span><span class="n">y_test</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">[:</span><span class="mi">100</span><span class="p">])),</span><span class="n">y_pred</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;real&#39;</span><span class="p">,</span><span class="s1">&#39;predict&#39;</span><span class="p">])</span>
-<span class="c1"># 保存一下图片</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;随机森林预测结果.png&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1">##显示图片</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="c1">##，</span>
+<span class="c1">##different indicatesdifferent data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">[:</span><span class="mi">100</span><span class="p">])),</span><span class="n">y_test</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">[:</span><span class="mi">100</span><span class="p">])),</span><span class="n">y_pred</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"-."</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">'real'</span><span class="p">,</span><span class="s1">'predict'</span><span class="p">])</span>
+<span class="c1"># save</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"Random ForestPrediction Results.png"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1">##</span>
 </pre></div>
 
      </div>
@@ -17348,7 +17348,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>大部分还是预测正确的</p>
+<p>minuteprediction</p>
 
 </div>
 </div>
@@ -17358,11 +17358,11 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 预测变量的重要性</span>
-<span class="n">feat_labels</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;count&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># predictionvariable</span>
+<span class="n">feat_labels</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'count'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span>
 </pre></div>
 
      </div>
@@ -17375,10 +17375,10 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 查看一下提取的特征标签</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># viewextractfeaturelabel</span>
 <span class="n">feat_labels</span>
 </pre></div>
 
@@ -17401,9 +17401,9 @@ class="
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Index([&#39;season&#39;, &#39;holiday&#39;, &#39;workingday&#39;, &#39;weather&#39;, &#39;temp&#39;, &#39;atemp&#39;,
-       &#39;humidity&#39;, &#39;windspeed&#39;, &#39;month&#39;, &#39;day&#39;, &#39;hour&#39;],
-      dtype=&#39;object&#39;)</pre>
+<pre>Index(['season', 'holiday', 'workingday', 'weather', 'temp', 'atemp',
+       'humidity', 'windspeed', 'month', 'day', 'hour'],
+      dtype='object')</pre>
 </div>
 
 </div>
@@ -17417,7 +17417,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rf_model</span><span class="o">.</span><span class="n">feature_importances_</span>
@@ -17458,16 +17458,16 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Feature&#39;</span><span class="p">:</span> <span class="n">feat_labels</span><span class="p">,</span> <span class="s1">&#39;Feature importance&#39;</span><span class="p">:</span> <span class="n">rf_model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">})</span>
-<span class="c1"># ascending 设置为false代表降序排列</span>
-<span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Feature importance&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tmp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Feature'</span><span class="p">:</span> <span class="n">feat_labels</span><span class="p">,</span> <span class="s1">'Feature importance'</span><span class="p">:</span> <span class="n">rf_model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">})</span>
+<span class="c1"># ascending false</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'Feature importance'</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;feature importances&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Feature importance&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Feature&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;特征重要性可视化.png&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'feature importances'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Feature importance'</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">'Feature'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"Feature Importancevisualization.png"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -17508,7 +17508,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 
